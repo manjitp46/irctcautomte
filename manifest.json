@@ -1,0 +1,23 @@
+{
+    "background": {
+        "persistent": false,
+        "scripts": ["background.js"]
+    },
+    "manifest_version": 2,
+    "name": "IRCTC Passenger Details",
+    "description": "Fill Passenger Details",
+    "version": "0.0.1",
+    "icons": {
+        "128": "img/128.png",
+        "19": "img/19.png",
+        "48": "img/48.png"
+    },
+    "browser_action": {
+        "default_icon": "img/48.png"
+    },
+    "permissions": ["http://*/*", "https://*/*","storage", "tabs"],
+    "content_scripts": [{
+        "js": ["jquery.min.js","content_script.js"],
+        "matches": ["https://www.irctc.co.in/eticketing/trainbetweenstns.jsf", "https://www.irctc.co.in/eticketing/trainbetweenstns.jsf*", "https://www.irctc.co.in/eticketing/jpInput.jsf*","https://www.irctc.co.in/eticketing/*"]
+    }]
+}
